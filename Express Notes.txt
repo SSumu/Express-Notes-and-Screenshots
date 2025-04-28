@@ -1,0 +1,37 @@
+Express Validator & Prisma
+---------------------------
+
+1. There can be multiple errors to username. Then we have to loop this one and create the error messages for one by one. Data from the user.mjs will be sent to the error-creator.mjs.
+
+2.
+server is running
+PrismaClientKnownRequestError: 
+Invalid `prisma.user.create()` invocation:
+
+
+Unique constraint failed on the fields: (`Username`)
+    at Vn.handleRequestError (E:\Code Practising\Express\node_modules\@prisma\client\runtime\library.js:121:7339)
+    at Vn.handleAndLogRequestError (E:\Code Practising\Express\node_modules\@prisma\client\runtime\library.js:121:6663)
+    at Vn.request (E:\Code Practising\Express\node_modules\@prisma\client\runtime\library.js:121:6370)
+    at async l (E:\Code Practising\Express\node_modules\@prisma\client\runtime\library.js:130:9617)
+    at async file:///E:/Code%20Practising/Express/src/router/user.mjs:177:5 {
+  code: 'P2002',
+  clientVersion: '6.2.1',
+  meta: { modelName: 'User', target: [ 'Username' ] }
+}
+
+* This is a database error. This is about field must be unique.
+* code: 'P2002' :- By catching this code, we can send the exact correct error to the client side.
+* We use this because if we just says this is a database error, client side cannot understand what is the actual error happens in the database.
+
+
+JWT Authentication & Middleware
+--------------------------------
+
+1. jsonwebtoken must be generated when a login occurs
+2. key is used to verify whether the token is ours
+
+CRUD with One to One Relation
+------------------------------
+
+When migration, database ekata profile eka wadiddi image eka danna oona userId ekka, atanin ena data walin userId eka danna oona. 
