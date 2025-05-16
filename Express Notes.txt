@@ -34,4 +34,4 @@ JWT Authentication & Middleware
 CRUD with One to One Relation
 ------------------------------
 
-When migration, database ekata profile eka wadiddi image eka danna oona userId ekka, atanin ena data walin userId eka danna oona. 
+When migration, database ekata profile eka wadiddi image eka danna oona userId ekka, atanin ena data walin userId eka danna oona.
