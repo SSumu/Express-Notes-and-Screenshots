@@ -35,3 +35,10 @@ CRUD with One to One Relation
 ------------------------------
 
 When migration, database ekata profile eka wadiddi image eka danna oona userId ekka, atanin ena data walin userId eka danna oona.
+
+
+CRUD with One to Many Relation
+------------------------------
+
+There it has two files named user.mjs and profile.mjs because There is a user and each user has only one profile.
+We can give the token as time-based which is valid only for a specific time.
