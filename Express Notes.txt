@@ -42,3 +42,17 @@ CRUD with One to Many Relation
 
 There it has two files named user.mjs and profile.mjs because There is a user and each user has only one profile.
 We can give the token as time-based which is valid only for a specific time.
+
+-----------------------------------
+Prisma migrate command:-
+npx prisma migrate dev --name init
+-----------------------------------
+
+This in Many to Many Relationship :-
+If there are products which connected for category, there is a difference in the way when those products are connected to the category. Product list must be come in either create or update.
+
+In One to Many Relationship :-
+If category c(id = 1) is connected with products r(id = 1) and f(id = 2). If category z(id = 2) is connected with products r(id = 1) , f(id = 2) and z(id = 3). c cannot again connect with the r or f. So c's id with r's or f's id can be taken as complexity primary key when they take both together.
+
+Let's consider products have been come to update then we do the work in the update.
+There the one category has many products. What are the products that going to be connected to the category?. Products are connected by the Id. Unique field will be used to connnect that. UserId can also be used. But the practical way is to apply product id. Because it is the unique id.
