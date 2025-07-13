@@ -56,3 +56,47 @@ If category c(id = 1) is connected with products r(id = 1) and f(id = 2). If cat
 
 Let's consider products have been come to update then we do the work in the update.
 There the one category has many products. What are the products that going to be connected to the category?. Products are connected by the Id. Unique field will be used to connnect that. UserId can also be used. But the practical way is to apply product id. Because it is the unique id.
+
+
+Mastering Cookies and Sessions
+------------------------------
+
+Both Cookies and Sessions are things used to detain(keep) small amount of data. Cookies detain the data by keeping in the client side. Sessions detain the neccessary data by keeping in the server side. Data in the client side may keep sensitive information which contains the sensitive facts on security that is more secure to save it in the server side. This is the main requirement. This is the requirement of taking the data as Cookies and taking the data as Sessions. If we feel it is not secure to keep sensitive information in the client side, then we keep that information in the server side. If the session's data keeps in the server side, according to the user who owns that session? For a session, session has a little information as a cookie about its ownership and sends it to the client side. It means that there we put a little note in the client side about mentioning the particular session. That information is session ID which is sent to client side as a cookie. Even we use a session has a relevant cookie. But the data are having in the server as a session. Mainly cookies and sessions are used for authentication or authorization. Authentication and authorization are two things. Most times we keep data which related to authentication in cookies or sessions. For that authentication thing, to keep JWT or other token which we use cookies or sessions. Token does not give any kind of security but it only gives some kind of identification. But the way it(token) handling gives the security. Not the security from the token. The way token is issuing, validating the token and the process of it gives a security. Token gives a security is a wrong opinion. We can use a cookie to save a token. Token can be kept as a session also. There it gives more security when a token keep as a session than as a cookie. But we do not create token with sensitive information like passwords. Token only has some simple details like userid and even if it is taken by another person, there is no use to that person.
+
+-:Cookies:-
+
+After the expiration time reached, then the cookie will be deleted. We can manually delete all the cookies or induvidual cookies.
+We can use cookie parser middleware to get the real cookie value. (Not cookie value which gives from the browser.)
+
+Cookie can be sometimes registered by others and it is not impossible. We find our value or do other thing and then we put it. But the same generated key (secret key) is very difficult to obtain by others. Even the value can be taken, but taking the secret key is not so easy. It cannot correctly identify the key. There is no that much security from it. But it has some level of security. The security will be decided from the way we handles it. Key is not give the security.
+
+We can keep some data as a string.
+
+We have to install cookie parser package(module) to get the real cookie value.
+
+-:Sessions:-
+
+First we have to install the session package(library).
+Session package installation command:-
+npm i express-session
+
+It(express-session) must be put as a middleware.
+It gives same session ID in the same expiration time(maxAge) when it calls GET requests again and again in the same expiration time.
+
+We have to use databases to store the sessions because there are many users around the world (Even the session is saved in some place at the server).
+
+-- Prisma Session Store installation --
+
+We want to install the driver prisma-session-store from npmjs to store sessions in the database.
+After the installation of prisma session store codes in the server.mjs, then we have to migrate the changes to the database.
+By using this code:-
+npx prisma migrate dev --name init
+Otherwise session is not applied to the database.
+(Your database is now in sync with your schema.)
+We have to migrate the changes to the database to sync it with our schema.
+
+It is an advantage to us that save the sessions in the database than in the memory(RAM).
+When we send a GET request to the read-session and if the existing session was expired, then the new session is registered.
+Sessions are cleared from the database after checkPeriod.
+Keeping a session to put a token, is a useless thing because it is a sensitive information.
+If the sessions are saved in the server, those are lost when the server is restarted. So if we want to keep those information for later use, then we have to store it in the database.
