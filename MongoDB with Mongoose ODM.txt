@@ -1,0 +1,25 @@
+1. There it can easily connect online through MongoDB Atlas.
+2. We have to install drivers from npmjs to connect MongoDB.
+3. Normally we do not install database drivers directly. In prisma, we use ORM for SQL databases.
+In MongoDB we use ODM which is Mongoose. Currently Mongo drivers do not directly be used. 
+4. npm init -y :- To initialize a package.json file.
+5. "start:dev":"nodemon server.mjs" :- This is another way of writting dev method.
+6. Mongoose is a ODM(Object Document Mapping). ORM(Object Relational Mapping)
+7. npm i dotenv :- To use .env file we have to install and use the dotenv library. To import dotenv file use this:- import "dotenv/config";
+8. Then run the server as npm run start:dev
+9. npm i -D nodemon :- install the nodemon library as a dev dependency.
+10. 4000
+server running... :- This shows that server is running on the PORT on the .env file. That means .env file was correctly registered.
+11. In the MongoDB Atlas, when connect the cluster from the MongoDB Driver, it shows npm install mongodb command in the second step. This is the official MongoDB driver but we do not want it because we installed the mongoose ODM instead of it.
+12. MONGO_URL does not need to be put as a string. We can directly assign it.
+13. mongodb+srv://sadeepalsumudu:R5n337BAelHafaGX@cluster0.mw3v9bo.mongodb.net/ss_express_db?retryWrites=true&w=majority&appName=Cluster0
+Before ? in the url, we can put the db name. In here it is ss_express_db. In here the <db_password> is R5n337BAelHafaGX. Initially it was created for this url as a default password for the connection string. We can change this password at the first moment when it shows to us and later it is not possible.
+14. After the project was created in the MongoDB Atlas, first there it should go to the Network Access under SECURITY.
+15. Add a new IP Address. Otherwise you cannot send the request.
+16. After you clicked the ADD IP ADDRESS button, then Add IP Access List Entry dialouge box will be opened. Then in the Access List Entry:, enter this ip address :- 0.0.0.0 . This will allow us to send request from any ip address. Because we have dynamic ip address and not a static ip address. This will do only for the development stage and not for the production. At production level atlas is not used. Only 512MB space will be given to us.
+16. Go to the Database Access tab, then create a user account. (I have already created.)
+17. Go to ADD NEW DATABASE USER button, then add a password as usual. After that, under Database User Privileges there is a section as Built-in Role. Choose Atlas admin as the role.
+18. Go to Clusters tab, then click connect button. Then go to connection string and then apply the db_password(default password is given and you can change it) to it.
+19. There are different ways to connect MongoDB database connection.
+20. Only the connection string will be put in the code. Other configurations are not put. Those configurations were put in old versions.
+21. Until the schemas are created, the data will not be put in to the collections.
