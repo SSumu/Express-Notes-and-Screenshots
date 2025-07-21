@@ -1,0 +1,5 @@
+1. As there are no relations in MongoDB in DB side(perspective), we can create it(relations) from ODM.
+
+2. Currently there is no relation concept, even there are relations or not. Relational data concept but we are not going to make the database relational. We are going to do the concept of relation(relate) the data. In database side, we do not make relation to the database in currently (We do not relate the database.). Currently neither SQL nor NoSQL has relations. Typically there are no relations in NoSQL(According to the Amila but you have to search about this). If it is MongoDB, then it is Mongoose ODM. If it is Prisma, then it is Prisma ORM. According to the Amila, in NoSQL databases, there are no relations in database side(perspective). But we can do that using ODM indirectly. But it is not currently used in industry. In the new trend, it is not used.
+
+3. There are several ways to make relations to the profiles. Here Amila uses the best way. Because this is better than there it using with subdocument.
